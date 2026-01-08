@@ -1,278 +1,365 @@
+/* 
+============================================
+MEDIA QUERY PARA TABLETS (ANCHO MÁXIMO 1120px)
+============================================
+*/
 @media (max-width: 1120px) {
+    /* Ajusta el área del héroe para que la altura sea automática en tablets */
     .hero_area {
-        height: auto;
+        height: auto;                   /* Elimina altura fija para mejor adaptación */
     }
 
+    /* Reduce el padding del slider en tablets */
     .slider_section {
-        padding: 50px 0;
-
+        padding: 50px 0;                /* Padding uniforme arriba/abajo de 50px */
     }
 }
 
-/* Estilos para hacer el mapa completamente responsive */
+/* 
+============================================
+ESTILOS RESPONSIVE PARA LA SECCIÓN DEL MAPA
+Asegura que el mapa de Google se adapte a diferentes dispositivos
+============================================
+*/
 .map_section {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px 0;
-    background: #f8f9fad8;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;                        /* Ancho completo del contenedor padre */
+    margin: 0 auto;                     /* Centrado horizontal automático */
+    padding: 20px 0;                    /* Padding vertical de 20px */
+    background: #f8f9fad8;             /* Fondo gris claro semitransparente */
+    border-radius: 10px;                /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
 }
 
+/* Contenedor principal del mapa */
 #map {
-    position: relative;
-    width: 100%;
-    min-height: 450px;
-    overflow: hidden;
-    border-radius: 8px;
+    position: relative;                 /* Posicionamiento relativo para elementos hijos absolutos */
+    width: 100%;                        /* Ancho completo */
+    min-height: 450px;                  /* Altura mínima para mantener legibilidad */
+    overflow: hidden;                   /* Oculta cualquier contenido que sobresalga */
+    border-radius: 8px;                 /* Bordes ligeramente redondeados */
 }
 
+/* Iframe del mapa de Google dentro del contenedor */
 #map iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important; /* Sobreescribe el ancho fijo */
-    height: 100% !important; /* Sobreescribe la altura fija */
-    border: 0;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;                 /* Posicionamiento absoluto dentro del contenedor */
+    top: 0;                            /* Alineado con el borde superior */
+    left: 0;                           /* Alineado con el borde izquierdo */
+    width: 100% !important;            /* Ancho completo (sobreescribe estilos inline) */
+    height: 100% !important;           /* Altura completa (sobreescribe estilos inline) */
+    border: 0;                         /* Sin borde */
+    border-radius: 8px;                /* Bordes redondeados consistentes */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto de elevación */
 }
 
-/* Elimina el center tag que no es necesario con CSS moderno */
+/* Elimina el efecto del tag center heredado del HTML */
 #map center {
-    display: contents; /* Hace que el center no afecte el layout */
+    display: contents;                 /* Hace que el elemento center no afecte el layout */
 }
 
-/* Media Queries para responsividad */
+/* 
+============================================
+MEDIA QUERIES ESPECÍFICAS PARA DIFERENTES DISPOSITIVOS
+============================================
+*/
 
-/* Para tablets y laptops pequeñas */
+/* Para tablets y laptops pequeñas (máximo 1024px) */
 @media (max-width: 1024px) {
+    /* Reduce el padding de la sección del mapa */
     .map_section {
-        padding: 15px;
+        padding: 15px;                  /* Padding uniforme de 15px en todos lados */
     }
     
+    /* Reduce la altura mínima del mapa */
     #map {
-        min-height: 400px;
+        min-height: 400px;              /* Altura mínima reducida para tablets */
     }
 }
 
-/* Para tablets en orientación vertical */
+/* Para tablets en orientación vertical (máximo 768px) */
 @media (max-width: 768px) {
+    /* Ajustes adicionales para tablets más pequeñas */
     .map_section {
-        padding: 12px;
-        border-radius: 8px;
+        padding: 12px;                  /* Padding aún más reducido */
+        border-radius: 8px;             /* Bordes ligeramente menos redondeados */
     }
     
+    /* Reduce más la altura mínima */
     #map {
-        min-height: 350px;
+        min-height: 350px;              /* Altura mínima adaptada a tablets pequeñas */
     }
 }
 
-/* Para móviles grandes */
+/* Para móviles grandes (máximo 576px) */
 @media (max-width: 576px) {
+    /* Ajustes específicos para smartphones */
     .map_section {
-        padding: 10px;
-        margin: 10px;
-        border-radius: 6px;
+        padding: 10px;                  /* Padding mínimo */
+        margin: 10px;                   /* Margen externo para separación */
+        border-radius: 6px;             /* Bordes menos redondeados */
     }
     
+    /* Altura mínima optimizada para móviles */
     #map {
-        min-height: 300px;
+        min-height: 300px;              /* Altura adecuada para pantallas de móviles */
     }
     
+    /* Ajusta los bordes del iframe */
     #map iframe {
-        border-radius: 6px;
+        border-radius: 6px;             /* Bordes consistentes con el contenedor */
     }
 }
 
-/* Para móviles pequeños */
+/* Para móviles pequeños (máximo 375px) */
 @media (max-width: 375px) {
+    /* Altura mínima aún más reducida para móviles pequeños */
     #map {
-        min-height: 250px;
+        min-height: 250px;              /* Altura mínima optimizada para pantallas pequeñas */
     }
 }
 
-/* Para pantallas muy grandes */
+/* Para pantallas muy grandes (mínimo 1600px) */
 @media (min-width: 1600px) {
+    /* Ajustes para monitores grandes o de alta resolución */
     .map_section {
-        max-width: 1400px;
+        max-width: 1400px;              /* Ancho máximo controlado para mantener proporciones */
     }
     
+    /* Aumenta la altura mínima para aprovechar el espacio */
     #map {
-        min-height: 500px;
+        min-height: 500px;              /* Altura mayor para pantallas grandes */
     }
 }
 
-/* Efecto hover para mejorar la experiencia */
+/* 
+============================================
+EFECTO HOVER PARA MEJORAR LA EXPERIENCIA DE USUARIO
+============================================
+*/
 #map iframe:hover {
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada al pasar el mouse */
+    transition: box-shadow 0.3s ease;   /* Transición suave para el efecto de sombra */
 }
 
-/* Asegurar que el contenedor mantenga relación de aspecto 16:9 */
+/* 
+============================================
+CLASE PARA MANTENER RELACIÓN DE ASPECTO 16:9
+Útil para videos o elementos que deben mantener proporción específica
+============================================
+*/
 .aspect-ratio-16-9 {
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    position: relative;
-    width: 100%;
+    padding-bottom: 56.25%;             /* 56.25% = 9/16 * 100% (para relación 16:9) */
+    position: relative;                 /* Posicionamiento relativo para el iframe absoluto */
+    width: 100%;                        /* Ancho completo */
 }
 
 .aspect-ratio-16-9 iframe {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
+    position: absolute;                 /* Posicionamiento absoluto dentro del contenedor */
+    height: 100%;                       /* Altura completa */
+    width: 100%;                        /* Ancho completo */
+    left: 0;                            /* Alineado a la izquierda */
+    top: 0;                             /* Alineado arriba */
 }
 
-/* Opcional: Para mantener el mapa centrado horizontalmente */
+/* 
+============================================
+CONTENEDOR PARA CENTRAR EL MAPA HORIZONTALMENTE
+============================================
+*/
 .map_section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+    max-width: 1200px;                  /* Ancho máximo para contener el contenido */
+    margin: 0 auto;                     /* Centrado horizontal */
+    padding: 0 15px;                    /* Padding lateral para márgenes internos */
 }
 
-
+/* 
+============================================
+MEDIA QUERY PARA TABLETS (768px o más)
+Ajustes específicos para la sección de videos
+============================================
+*/
 @media (min-width: 768px) {
-    /* Para tablets - dos columnas con espacio */
+    /* Para tablets - layout de dos columnas */
     #video {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 40px;
+        flex-direction: row;            /* Elementos en fila horizontal */
+        flex-wrap: wrap;                /* Permite que los elementos pasen a siguiente línea */
+        justify-content: center;        /* Centra los elementos horizontalmente */
+        gap: 40px;                      /* Espacio entre videos */
     }
     
+    /* Cada video ocupa aproximadamente la mitad del ancho menos el espacio */
     #video video {
-        flex: 0 1 calc(50% - 40px); /* Dos videos por fila con espacio */
-        max-width: 400px;
+        flex: 0 1 calc(50% - 40px);     /* Dos videos por fila con espacio entre ellos */
+        max-width: 400px;               /* Ancho máximo para mantener proporciones */
     }
 }
 
+/* 
+============================================
+MEDIA QUERY PARA ESCRITORIOS GRANDES (1024px o más)
+============================================
+*/
 @media (min-width: 1024px) {
-    /* Para escritorio grande - más espacio y tamaño */
+    /* Para escritorio grande - layout de tres columnas */
     #video {
-        gap: 60px;
-        padding: 60px 40px;
+        gap: 60px;                      /* Más espacio entre videos */
+        padding: 60px 40px;             /* Padding interno mayor */
     }
     
+    /* Cada video ocupa aproximadamente un tercio del ancho menos el espacio */
     #video video {
-        flex: 0 1 calc(33.333% - 60px); /* Tres videos por fila en pantallas grandes */
-        max-width: 350px;
+        flex: 0 1 calc(33.333% - 60px); /* Tres videos por fila */
+        max-width: 350px;               /* Ancho máximo controlado */
     }
 }
 
-/* Ajustes para pantallas pequeñas */
+/* 
+============================================
+MEDIA QUERY PARA MÓVILES PEQUEÑOS (480px o menos)
+============================================
+*/
 @media (max-width: 480px) {
+    /* Ajustes específicos para smartphones pequeños */
     #video {
-        gap: 30px;
-        padding: 30px 15px;
+        gap: 30px;                      /* Espacio reducido entre videos */
+        padding: 30px 15px;             /* Padding interno reducido */
     }
     
+    /* Ajustes visuales para los videos */
     #video video {
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;             /* Bordes menos redondeados */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave */
     }
 }
 
-
+/* 
+============================================
+MEDIA QUERY PARA TABLETS (992px o menos)
+Ajustes para navegación y servicios
+============================================
+*/
 @media (max-width: 992px) {
+    /* Centra el botón de búsqueda en tablets */
     .custom_nav-container .nav_search-btn {
-        background-position: center;
+        background-position: center;    /* Centra la imagen de lupa */
     }
 
+    /* Cambia el layout de las tarjetas de servicios a columna única */
     .service_section .card-deck {
-
-        flex-direction: column;
-
+        flex-direction: column;         /* Apila las tarjetas verticalmente */
     }
 
+    /* Añade margen inferior entre tarjetas apiladas */
     .service_section .card-deck .card {
-        margin-bottom: 25px;
+        margin-bottom: 25px;            /* Espacio entre tarjetas */
     }
 }
 
+/* 
+============================================
+MEDIA QUERY PARA TABLETS PEQUEÑAS (768px o menos)
+Ajustes múltiples para diferentes secciones
+============================================
+*/
 @media (max-width: 768px) {
-
+    /* Ajustes para la imagen del slider */
     .slider_img-box {
-
-        width: 85%;
-        margin: 65px auto;
-
+        width: 85%;                     /* Mantiene ancho del 85% */
+        margin: 65px auto;              /* Margen superior de 65px y centrado horizontal */
     }
 
+    /* Reposiciona los controles del carrusel del slider */
     .slider_section .custom_carousel-control {
-
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        width: 105px;
-        transform: translate(-50%, -50%);
-        display: flex;
-        justify-content: space-between;
-
+        position: absolute;             /* Posicionamiento absoluto */
+        top: 100%;                      /* Colocado justo debajo del slider */
+        left: 50%;                      /* Centrado horizontalmente */
+        width: 105px;                   /* Ancho fijo */
+        transform: translate(-50%, -50%); /* Centrado exacto */
+        display: flex;                  /* Usa flexbox para distribución */
+        justify-content: space-between; /* Espacia los botones equitativamente */
     }
 
+    /* Ajustes para la sección de frutas/pasteles */
     .fruit_section .fruit_detail-box {
-
-        margin-bottom: 40px;
-        text-align: center;
-
+        margin-bottom: 40px;            /* Margen inferior para separación */
+        text-align: center;             /* Centra el texto */
     }
 
+    /* Centra los botones dentro de los detalles de frutas */
     .fruit_detail-box>div {
-
-        display: flex;
-        justify-content: center;
-
+        display: flex;                  /* Usa flexbox para centrado */
+        justify-content: center;        /* Centra horizontalmente los elementos hijos */
     }
 
+    /* Reduce el tamaño del fondo de la sección de contacto */
     .contact_section {
-        background-size: 105px;
+        background-size: 105px;         /* Tamaño reducido de la imagen de fondo */
     }
 
+    /* Asegura que los inputs sean transparentes en móviles */
     .contact_section input {
-
-        background-color: transparent;
-
+        background-color: transparent;  /* Fondo transparente */
     }
 
+    /* Centra el contenido de la sección de información */
     .info_section .col-md-3 {
-        text-align: center;
+        text-align: center;             /* Centra el texto */
     }
 
+    /* Añade margen inferior a todas las columnas excepto la última */
     .info_section .col-md-3:not(:nth-last-child(1)) {
-
-        margin-bottom: 35px;
+        margin-bottom: 35px;            /* Espacio entre secciones de información */
     }
 
+    /* Reduce el tamaño del título en la sección tasty */
     .tasty_section h2 {
-
-        font-size: 80px;
+        font-size: 80px;                /* Tamaño de fuente reducido para móviles */
     }
 }
 
+/* 
+============================================
+MEDIA QUERY PARA MÓVILES (576px o menos)
+Ajustes para el slider en pantallas pequeñas
+============================================
+*/
 @media (max-width: 576px) {
+    /* Centra el contenido del detalle del slider */
     .slider_item-container .slider_item-detail {
-
-        text-align: center;
-
+        text-align: center;             /* Centra todo el texto */
     }
 
+    /* Centra los botones del slider */
     .slider_item-container .slider_item-detail .d-flex {
-
-        justify-content: center;
-
+        justify-content: center;        /* Centra los elementos flex horizontalmente */
     }
 }
 
-@media (max-width: 480px) {}
+/* 
+============================================
+MEDIA QUERIES PARA DISPOSITIVOS MUY PEQUEÑOS
+Nota: Estas media queries están vacías pero están estructuradas para futuras personalizaciones
+============================================
+*/
+@media (max-width: 480px) {
+    /* Espacio reservado para ajustes específicos de móviles muy pequeños */
+}
 
-@media (max-width: 400px) {}
+@media (max-width: 400px) {
+    /* Espacio reservado para ajustes específicos de móviles de 400px o menos */
+}
 
-@media (max-width: 360px) {}
+@media (max-width: 360px) {
+    /* Espacio reservado para ajustes específicos de móviles de 360px o menos */
+}
 
+/* 
+============================================
+MEDIA QUERY PARA PANTALLAS GRANDES (1200px o más)
+Ajusta el ancho máximo del contenedor principal
+============================================
+*/
 @media (min-width: 1200px) {
     .container {
-        max-width: 1170px;
+        max-width: 1170px;              /* Ancho máximo específico para pantallas grandes */
     }
-
 }

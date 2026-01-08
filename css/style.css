@@ -1,657 +1,1013 @@
+/* 
+============================================
+CONFIGURACIÓN INICIAL Y FUENTES
+============================================
+*/
+
+/* Importación de fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet');
+
+/* 
+============================================
+ESTILOS GENERALES DEL CUERPO
+Aplica a todo el documento HTML
+============================================
+*/
 body {
-  font-family: 'Poppins', sans-serif;
-  color: #000000;
-  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;  /* Fuente principal del sitio */
+  color: #000000;                      /* Color de texto negro */
+  background-color: #ffffff;           /* Fondo blanco */
 }
 
+/* 
+============================================
+SECCIÓN DE VIDEOS
+Contenedor principal para videos en la página principal
+============================================
+*/
 #video {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 70px; /* Espacio entre videos */
-    padding: 40px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center; /* Alinea verticalmente */
+    display: flex;                    /* Usa Flexbox para layout flexible */
+    flex-wrap: wrap;                  /* Permite que los elementos se ajusten en múltiples líneas */
+    justify-content: center;          /* Centra horizontalmente los videos */
+    gap: 70px;                        /* Espacio entre videos */
+    padding: 40px 40px;               /* Espaciado interno (arriba/abajo y izquierda/derecha) */
+    max-width: 1200px;                /* Ancho máximo del contenedor */
+    margin: 0 auto;                   /* Centra el contenedor horizontalmente */
+    align-items: center;              /* Alinea verticalmente los elementos */
 }
 
+/* 
+============================================
+ESTILOS PARA LOS ELEMENTOS VIDEO DENTRO DE LA SECCIÓN
+============================================
+*/
 #video video {
-    flex: 1; /* Cada video ocupa espacio proporcional */
-    min-width: 300px; /* Ancho mínimo */
-    max-width: 500px; /* Ancho máximo */
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-    object-fit: cover;
+    flex: 1;                          /* Ocupa espacio proporcional disponible */
+    min-width: 300px;                 /* Ancho mínimo para responsividad */
+    max-width: 500px;                 /* Ancho máximo para controlar tamaño */
+    height: auto;                     /* Altura automática manteniendo proporción */
+    border-radius: 12px;              /* Bordes redondeados */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra para efecto de elevación */
+    transition: transform 0.3s ease;  /* Transición suave para efectos hover */
+    object-fit: cover;                /* Ajusta el video al contenedor manteniendo proporción */
 }
 
+/* 
+============================================
+CLASE PARA TÍTULOS CON FUENTE ESPECIAL
+Usada en varios lugares del sitio
+============================================
+*/
+.Titulos{
+  font-family: "Dancing Script", cursive; /* Fuente cursiva decorativa */
+  font-weight: 800;                       /* Grosor de fuente (extra negrita) */
+  font-style: normal;                     /* Estilo normal (no itálica) */
+}
 
-
-/* Estilos para controles de video personalizados */
+/* 
+============================================
+CONTROLES PERSONALIZADOS PARA VIDEO
+Estilos específicos para navegadores WebKit (Chrome, Safari)
+============================================
+*/
 #video video::-webkit-media-controls-panel {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);  /* Fondo semitransparente para controles */
 }
 
 #video video::-webkit-media-controls-play-button,
 #video video::-webkit-media-controls-volume-slider,
 #video video::-webkit-media-controls-mute-button {
-    filter: invert(1);
+    filter: invert(1);                /* Invierte colores para mejor contraste */
 }
 
-
-
-
+/* 
+============================================
+ANIMACIÓN DE APARICIÓN (FADE IN)
+Define keyframes para animación de entrada
+============================================
+*/
 @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 0;                   /* Comienza invisible */
+        transform: translateY(20px);  /* Comienza 20px más abajo */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1;                   /* Termina completamente visible */
+        transform: translateY(0);     /* Termina en posición normal */
     }
 }
 
-/* Retraso escalonado para la animación */
+/* 
+============================================
+RETRASOS ESCALONADOS PARA ANIMACIONES
+Aplica diferentes delays para efecto cascada
+============================================
+*/
 #video video:nth-child(1) {
-    animation-delay: 0.1s;
+    animation-delay: 0.1s;            /* Primer video aparece después de 0.1s */
 }
 
 #video video:nth-child(2) {
-    animation-delay: 0.3s;
+    animation-delay: 0.3s;            /* Segundo video después de 0.3s */
 }
 
 #video video:nth-child(3) {
-    animation-delay: 0.5s;
+    animation-delay: 0.5s;            /* Tercer video después de 0.5s */
 }
 
-/* Efecto hover */
+/* 
+============================================
+EFECTO HOVER PARA VIDEOS
+Aumenta ligeramente el tamaño al pasar el mouse
+============================================
+*/
 #video video:hover {
-    transform: scale(1.03);
+    transform: scale(1.03);           /* Escala al 103% del tamaño original */
 }
 
+/* 
+============================================
+CLASES DE ESPACIADO REUTILIZABLES
+Utilizadas en múltiples secciones del sitio
+============================================
+*/
 .layout_padding {
-  padding: 75px 0;
+  padding: 75px 0;                    /* 75px de padding arriba y abajo */
 }
 
 .layout_padding2 {
-  padding: 45px 0;
+  padding: 45px 0;                    /* 45px de padding arriba y abajo */
 }
 
 .layout_padding2-top {
-  padding-top: 45px;
+  padding-top: 45px;                  /* 45px de padding solo arriba */
 }
 
-
 .layout_padding2-bottom {
-  padding-bottom: 45px;
+  padding-bottom: 45px;               /* 45px de padding solo abajo */
 }
 
 .layout_padding-top {
-  padding-top: 75px;
+  padding-top: 75px;                  /* 75px de padding solo arriba */
 }
 
 .layout_padding-bottom {
-  padding-bottom: 75px;
+  padding-bottom: 75px;               /* 75px de padding solo abajo */
 }
 
-
+/* 
+============================================
+ESTILOS DE BOTONES PERSONALIZADOS
+Botones con temas oscuro y naranja
+============================================
+*/
 .custom_dark-btn,
 .custom_orange-btn {
-  display: inline-block;
-  padding: 10px 0;
-  text-align: center;
-  width: 145px;
-  outline: none;
-  color: #f7f7f7;
-  border: 1px solid transparent;
+  display: inline-block;              /* Permite dimensionar como bloque pero en línea */
+  padding: 10px 0;                    /* 10px padding vertical, 0 horizontal */
+  text-align: center;                 /* Texto centrado */
+  width: 145px;                       /* Ancho fijo para consistencia */
+  outline: none;                      /* Elimina borde de enfoque predeterminado */
+  color: #f7f7f7;                     /* Color de texto claro */
+  border: 1px solid transparent;      /* Borde transparente por defecto */
 }
 
+/* 
+============================================
+BOTÓN CON TEMA OSCURO
+============================================
+*/
 .custom_dark-btn {
-  background-color: #000000;
+  background-color: #000000;          /* Fondo negro */
 }
 
 .custom_dark-btn:hover {
-  border: 1px solid #000000;
-  color: #000000;
-  background-color: transparent;
+  border: 1px solid #000000;          /* Borde negro al pasar mouse */
+  color: #000000;                     /* Texto negro al pasar mouse */
+  background-color: transparent;      /* Fondo transparente al pasar mouse */
 }
 
+/* 
+============================================
+BOTÓN CON TEMA NARANJA
+============================================
+*/
 .custom_orange-btn {
-  background-color: #fc5d35;
+  background-color: #fc5d35;          /* Fondo naranja característico */
 }
 
 .custom_orange-btn:hover {
-  border: 1px solid #fc5d35;
-  color: #fc5d35;
-  background-color: transparent;
+  border: 1px solid #fc5d35;          /* Borde naranja al pasar mouse */
+  color: #fc5d35;                     /* Texto naranja al pasar mouse */
+  background-color: transparent;      /* Fondo transparente al pasar mouse */
 }
 
+/* 
+============================================
+CLASES PARA ENCABEZADOS Y TEXTOS
+============================================
+*/
 .custom_heading {
-  text-align: center;
-  font-weight: bold;
+  text-align: center;                 /* Texto centrado */
+  font-weight: bold;                  /* Texto en negrita */
 }
 
 .custom_heading-text {
-  text-align: center;
+  text-align: center;                 /* Texto centrado */
 }
 
-
-/*header section*/
+/* 
+============================================
+SECCIÓN HEADER (ENCABEZADO)
+============================================
+*/
 .hero_area {
-  height: 98vh;
-  background-color: #f7f7f7;
+  height: 98vh;                       /* Ocupa 98% del viewport height */
+  background-color: #f7f7f7;          /* Fondo gris claro */
 }
 
 .hero_area.sub_pages {
-  height: auto;
+  height: auto;                       /* Altura automática en páginas secundarias */
 }
 
+/* 
+============================================
+SECCIÓN DE FRUTAS/PASTELES
+============================================
+*/
 .fruit_section{
-  background-color: #f7f7f7;
+  background-color: #f7f7f7;          /* Fondo gris claro */
 }
 
+/* 
+============================================
+ESTILOS DEL CONTENEDOR DEL HEADER
+============================================
+*/
 .header_section .container-fluid {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 25px;                /* Padding derecho */
+  padding-left: 25px;                 /* Padding izquierdo */
 }
 
 .header_section .nav_container {
-  margin: 0 auto;
+  margin: 0 auto;                     /* Centra el contenedor de navegación */
 }
 
+/* 
+============================================
+ESTILOS DE LOS ENLACES DE NAVEGACIÓN
+============================================
+*/
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
-  padding: 10px 30px;
-  color: #343434;
-  text-align: center
+  padding: 10px 30px;                 /* Padding horizontal amplio para enlaces */
+  color: #343434;                     /* Color de texto gris oscuro */
+  text-align: center                  /* Texto centrado */
 }
 
+/* 
+============================================
+ESTILOS GENERALES PARA ENLACES
+============================================
+*/
 a,
 a:hover,
 a:focus {
-  text-decoration: none;
+  text-decoration: none;              /* Elimina subrayado predeterminado */
 }
 
 a:hover,
 a:focus {
-  color: initial;
+  color: initial;                     /* Mantiene color inicial al hacer hover/focus */
 }
 
+/* 
+============================================
+ESTILOS PARA BOTONES
+============================================
+*/
 .btn,
 .btn:focus {
-  outline: none !important;
-  box-shadow: none;
+  outline: none !important;           /* Elimina borde de enfoque */
+  box-shadow: none;                   /* Elimina sombra predeterminada */
 }
 
-
-
+/* 
+============================================
+ESTILOS DE LA MARCA/LOGO
+============================================
+*/
 .navbar-brand,
 .navbar-brand:hover {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 24px;
-  color: #fafcfd;
+  text-transform: uppercase;          /* Texto en mayúsculas */
+  font-weight: bold;                  /* Texto en negrita */
+  font-size: 24px;                    /* Tamaño de fuente grande */
+  color: #fafcfd;                     /* Color de texto claro */
 }
 
+/* 
+============================================
+BOTÓN DE BÚSQUEDA EN NAVEGACIÓN
+============================================
+*/
 .custom_nav-container .nav_search-btn {
-  background-image: url(../images/search-icon.png);
-
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position-y: 7px;
-  width: 35px;
-  height: 35px;
-  padding: 0;
-  border: none;
+  background-image: url(../images/search-icon.png); /* Imagen de lupa como fondo */
+  background-size: 22px;               /* Tamaño de la imagen */
+  background-repeat: no-repeat;        /* No repetir la imagen */
+  background-position-y: 7px;          /* Posición vertical centrada */
+  width: 35px;                         /* Ancho del botón */
+  height: 35px;                        /* Altura del botón */
+  padding: 0;                          /* Sin padding interno */
+  border: none;                        /* Sin borde */
 }
 
+/* 
+============================================
+CONTENEDOR DE LA MARCA CON LOGO
+============================================
+*/
 .navbar-brand {
-  display: flex;
-  align-items: center;
+  display: flex;                       /* Usa Flexbox para alinear logo y texto */
+  align-items: center;                 /* Centra verticalmente los elementos */
 }
 
 .navbar-brand img {
-  width: 45px;
-  margin-right: 5px;
+  width: 45px;                         /* Ancho del logo */
+  margin-right: 5px;                   /* Espacio entre logo y texto */
 }
 
 .navbar-brand span {
-  font-size: 20px;
-  font-weight: 700;
-  color: #2e2e2d;
-  margin-top: 5px;
+  font-size: 20px;                     /* Tamaño de fuente para el nombre */
+  font-weight: 700;                    /* Grosor de fuente (negrita) */
+  color: #2e2e2d;                      /* Color gris oscuro */
+  margin-top: 5px;                     /* Pequeño margen superior para alineación */
 }
 
+/* 
+============================================
+CONTENEDOR PRINCIPAL DE NAVEGACIÓN
+============================================
+*/
 .custom_nav-container {
-  z-index: 99999;
-  padding: 15px 0;
+  z-index: 99999;                      /* Alto z-index para estar sobre otros elementos */
+  padding: 15px 0;                     /* Padding vertical */
 }
 
 .custom_nav-container .navbar-toggler {
-  outline: none;
+  outline: none;                       /* Elimina borde de enfoque */
 }
 
+/* 
+============================================
+ÍCONO DEL BOTÓN HAMBURGUESA (MÓVIL)
+============================================
+*/
 .custom_nav-container .navbar-toggler .navbar-toggler-icon {
-  background-image: url(../images/menu.png);
-  background-size: 55px;
+  background-image: url(../images/menu.png); /* Imagen personalizada para menú */
+  background-size: 55px;               /* Tamaño de la imagen */
 }
 
+/* 
+============================================
+CONTENEDOR DE BOTÓN DE COTIZACIÓN
+============================================
+*/
 .quote_btn-container a {
-  display: inline-block;
-  padding: 5px 15px;
-  background-color: #fc5d35;
-  color: #f7f7f7;
-  font-size: 14px;
-  text-transform: uppercase;
+  display: inline-block;               /* Permite dimensionar como bloque pero en línea */
+  padding: 5px 15px;                   /* Padding interno */
+  background-color: #fc5d35;           /* Fondo naranja */
+  color: #f7f7f7;                      /* Texto claro */
+  font-size: 14px;                     /* Tamaño de fuente pequeño */
+  text-transform: uppercase;           /* Texto en mayúsculas */
 }
 
-/*end header section*/
+/* 
+============================================
+FIN ESTILOS HEADER
+============================================
+*/
 
-/* slider section */
+/* 
+============================================
+SECCIÓN SLIDER (CARRUSEL PRINCIPAL)
+============================================
+*/
 .slider_section {
-  padding-top: 8%;
+  padding-top: 8%;                     /* Padding superior del 8% del contenedor */
 }
 
 .slider_item-box {
-  width: 100%;
-  height: 100%;
+  width: 100%;                         /* Ancho completo */
+  height: 100%;                        /* Altura completa */
 }
 
 .slider_item-box .container {
-  height: 100%;
+  height: 100%;                        /* Altura completa del contenedor */
 }
 
+/* 
+============================================
+CONTENEDOR DE IMAGEN DEL SLIDER
+============================================
+*/
 .slider_img-box {
-  width: 85%;
-  margin: 0 auto;
+  width: 85%;                          /* Ocupa 85% del ancho disponible */
+  margin: 0 auto;                      /* Centra horizontalmente */
 }
 
 .slider_img-box img {
-  width: 100%;
+  width: 100%;                         /* Imagen ocupa todo el ancho disponible */
 }
 
+/* 
+============================================
+CONTENEDOR DE ITEM DEL SLIDER
+============================================
+*/
 .slider_item-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
+  display: flex;                       /* Flexbox para alinear imagen y texto */
+  align-items: center;                 /* Centra verticalmente los elementos */
+  width: 100%;                         /* Ancho completo */
+  height: 100%;                        /* Altura completa */
+  background-repeat: no-repeat;        /* No repetir fondo si se define */
 }
 
-
-
+/* 
+============================================
+DETALLE/DESCRIPCIÓN DEL SLIDER
+============================================
+*/
 .slider_item-detail h1 {
-  font-weight: 700;
-  font-size: 60px;
-  width: 95%;
+  font-weight: 700;                    /* Texto muy negrita */
+  font-size: 60px;                     /* Tamaño de fuente muy grande */
+  width: 95%;                          /* Ancho del 95% para márgenes laterales */
 }
 
 .slider_item-detail p {
-  margin: 45px 0;
+  margin: 45px 0;                      /* Margen vertical de 45px para párrafos */
 }
 
+/* 
+============================================
+BOTÓN DE LLAMADA EN SLIDER
+============================================
+*/
 .slider_call-btn {
-  display: inline-block;
-  padding: 8px 20px;
-  background-color: #edb040;
-  color: #fefdfd;
-  border-radius: 20px;
+  display: inline-block;               /* Permite dimensionar como bloque pero en línea */
+  padding: 8px 20px;                   /* Padding interno */
+  background-color: #edb040;           /* Fondo amarillo dorado */
+  color: #fefdfd;                      /* Texto blanco */
+  border-radius: 20px;                 /* Bordes muy redondeados */
 }
 
+/* 
+============================================
+ESTILOS PARA EL CARRUSEL (BOOTSTRAP)
+============================================
+*/
 .slider_section #carouselExampleControls,
 .carousel-inner,
 .carousel-item {
-  height: 100%;
+  height: 100%;                        /* Altura completa para todos los elementos del carrusel */
 }
 
+/* 
+============================================
+CONTROLES PERSONALIZADOS DEL CARRUSEL
+============================================
+*/
 .slider_section .custom_carousel-control {
-  position: absolute;
-  top: 50%;
-  left: 2%;
-  width: 105px;
-  transform: translateY(-50%);
+  position: absolute;                  /* Posicionamiento absoluto dentro del slider */
+  top: 50%;                           /* Centrado vertical */
+  left: 2%;                           /* 2% desde la izquierda */
+  width: 105px;                       /* Ancho fijo */
+  transform: translateY(-50%);        /* Ajuste fino para centrado vertical exacto */
 }
 
+/* 
+============================================
+BOTONES DE CONTROL DEL CARRUSEL
+============================================
+*/
 .slider_section .custom_carousel-control .carousel-control-prev,
 .slider_section .custom_carousel-control .carousel-control-next {
-  margin: 10px 0;
-  position: relative;
-  width: 45px;
-  height: 45px;
-  border: none;
-  opacity: 1;
-  background-repeat: no-repeat;
-  background-size: 12px;
-  background-position: center;
+  margin: 10px 0;                     /* Margen vertical entre botones */
+  position: relative;                  /* Posicionamiento relativo dentro del contenedor */
+  width: 45px;                        /* Ancho del botón */
+  height: 45px;                       /* Altura del botón (cuadrado) */
+  border: none;                       /* Sin borde */
+  opacity: 1;                         /* Completamente visible */
+  background-repeat: no-repeat;       /* No repetir imagen de fondo */
+  background-size: 12px;              /* Tamaño de la imagen de flecha */
+  background-position: center;        /* Centra la imagen dentro del botón */
 }
 
+/* 
+============================================
+BOTÓN ANTERIOR (PREV) DEL CARRUSEL
+============================================
+*/
 .slider_section .custom_carousel-control .carousel-control-prev {
-  background-image: url(../images/prev.png);
-  background-color: #fc5d35;
+  background-image: url(../images/prev.png); /* Flecha izquierda como fondo */
+  background-color: #fc5d35;           /* Fondo naranja */
 }
 
+/* 
+============================================
+BOTÓN SIGUIENTE (NEXT) DEL CARRUSEL
+============================================
+*/
 .slider_section .custom_carousel-control .carousel-control-next {
-  background-image: url(../images/next.png);
-  background-color: #000000;
+  background-image: url(../images/next.png); /* Flecha derecha como fondo */
+  background-color: #000000;           /* Fondo negro */
 }
 
-/* end slider section */
+/* 
+============================================
+FIN SECCIÓN SLIDER
+============================================
+*/
 
+/* 
+============================================
+SECCIÓN DE SERVICIOS
+============================================
+*/
 .service_section {
-  background-image: url(../images/Fondo3.png);
+  background-image: url(../images/Fondo3.png); /* Imagen de fondo para sección */
 }
 
+/* 
+============================================
+SECCIÓN DE CLIENTES (TESTIMONIOS)
+============================================
+*/
 .client_section{
-  background-image: url(../images/Fondo3.png);
-}
-.info_section{
-   background-image: url(../images/Fondo4.png);
+  background-image: url(../images/Fondo3.png); /* Misma imagen de fondo que servicios */
 }
 
-/* service section */
+/* 
+============================================
+SECCIÓN DE INFORMACIÓN (REDES SOCIALES)
+============================================
+*/
+.info_section{
+   background-image: url(../images/Fondo4.png); /* Imagen de fondo diferente */
+}
+
+/* 
+============================================
+ESTILOS DE TARJETAS EN SECCIÓN SERVICIOS
+============================================
+*/
 .service_section .card .card-img-top {
-  width: 50px;
-  margin: 55px auto 5px auto;
+  width: 50px;                         /* Ancho fijo para iconos */
+  margin: 55px auto 5px auto;         /* Margen superior grande, centrado horizontal, pequeño margen inferior */
 }
 
 .service_section .card {
-  text-align: center;
-  box-sizing: border-box;
-  position: relative;
+  text-align: center;                  /* Texto centrado en tarjetas */
+  box-sizing: border-box;              /* Incluye padding y border en dimensiones */
+  position: relative;                  /* Para posicionar elementos hijos absolutos */
 }
 
 .service_section .card .card-title {
-  color: #fc5d35;
-
+  color: #fc5d35;                      /* Título naranja */
 }
 
+/* 
+============================================
+EFECTO DE SUBRAYADO ANIMADO EN TARJETAS
+============================================
+*/
 .service_section .card::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 7px;
-  background-color: transparent;
+  content: "";                         /* Elemento pseudo generado */
+  position: absolute;                  /* Posicionamiento absoluto dentro de la tarjeta */
+  width: 100%;                         /* Ancho completo */
+  height: 7px;                         /* Altura de la línea */
+  background-color: transparent;       /* Inicialmente transparente */
 }
 
+/* 
+============================================
+EFECTOS HOVER PARA TARJETAS
+============================================
+*/
 .service_section .card:hover {
-  cursor: pointer;
-  border: none;
-  border-radius: 0;
-  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
-
+  cursor: pointer;                     /* Cambia cursor a puntero */
+  border: none;                        /* Elimina borde predeterminado */
+  border-radius: 0;                    /* Sin bordes redondeados */
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2); /* Sombra para navegadores WebKit */
+  -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2); /* Sombra para Firefox */
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2); /* Sombra estándar */
 }
 
 .service_section .card:hover::after {
-  background-color: #fc5d35;
+  background-color: #fc5d35;           /* Línea inferior naranja al hacer hover */
 }
 
-/* end service section */
-
-
-
-
-
-
-/* tasty section */
-
+/* 
+============================================
+SECCIÓN "TASTY" (LOS MEJORES PASTELES)
+============================================
+*/
 .tasty_section {
-  width: 100%;
-  height: 500px;
-  background-image: url(../images/Fondo2.png);
-    box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.541);
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  width: 100%;                         /* Ancho completo */
+  height: 500px;                       /* Altura fija */
+  background-image: url(../images/Fondo2.png); /* Imagen de fondo decorativa */
+  box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.541); /* Sombra para efecto 3D */
+  background-repeat: no-repeat;        /* No repetir imagen de fondo */
+  background-size: cover;              /* Cubrir todo el espacio disponible */
+  display: flex;                       /* Flexbox para centrar contenido */
+  justify-content: center;             /* Centrar horizontalmente */
+  align-items: center;                 /* Centrar verticalmente */
 }
 
 .tasty_section h2 {
-  font-size: 125px;
-  text-align: center;
-  font-weight: bold;
-  color: #ffffff;
-  text-transform: uppercase;
+  font-size: 125px;                    /* Tamaño de fuente muy grande */
+  text-align: center;                  /* Texto centrado */
+  font-weight: bold;                   /* Texto en negrita */
+  color: #ffffff;                      /* Texto blanco */
+  text-transform: uppercase;           /* Texto en mayúsculas */
 }
 
-/* end tasty section */
-
-/* client section */
+/* 
+============================================
+SECCIÓN DE CLIENTES (TESTIMONIOS)
+============================================
+*/
 .client_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: flex;                       /* Flexbox para layout */
+  flex-direction: column;              /* Coloca elementos en columna */
+  justify-content: center;             /* Centra verticalmente */
+  align-items: center;                 /* Centra horizontalmente */
 }
 
 .client_img-box {
-  width: 350px;
+  width: 350px;                        /* Ancho fijo para imágenes de clientes */
 }
 
 .client_img-box img {
-  width: 100%
+  width: 100%                          /* Imagen ocupa todo el ancho disponible */
 }
 
 .client_container h3 {
-  text-align: center;
-  margin-bottom: 25px;
+  text-align: center;                  /* Texto centrado */
+  margin-bottom: 25px;                 /* Margen inferior para separación */
 }
 
-
+/* 
+============================================
+CONTROLES DEL CARRUSEL DE TESTIMONIOS
+============================================
+*/
 .client_section .custom_carousel-control {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  width: 105px;
-  transform: translateX(-50%);
+  position: absolute;                  /* Posicionamiento absoluto */
+  top: 100%;                          /* Colocado justo debajo del contenido */
+  left: 50%;                          /* Centrado horizontalmente */
+  width: 105px;                       /* Ancho fijo */
+  transform: translateX(-50%);        /* Ajuste fino para centrado exacto */
 }
 
+/* 
+============================================
+BOTONES DEL CARRUSEL DE TESTIMONIOS
+============================================
+*/
 .client_section .custom_carousel-control .carousel-control-prev,
 .client_section .custom_carousel-control .carousel-control-next {
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 100%;
-  opacity: 1;
-  background-repeat: no-repeat;
-  background-size: 12px;
-  background-position: center;
-  background-color: #292727;
+  width: 45px;                        /* Ancho del botón */
+  height: 45px;                       /* Altura del botón (cuadrado) */
+  border: none;                       /* Sin borde */
+  border-radius: 100%;                /* Forma circular */
+  opacity: 1;                         /* Completamente visible */
+  background-repeat: no-repeat;       /* No repetir imagen de fondo */
+  background-size: 12px;              /* Tamaño de la imagen de flecha */
+  background-position: center;        /* Centra la imagen dentro del botón */
+  background-color: #292727;          /* Fondo gris oscuro */
 }
 
 .client_section .custom_carousel-control .carousel-control-prev:hover,
 .client_section .custom_carousel-control .carousel-control-next:hover {
-  background-color: #fc5d35;
+  background-color: #fc5d35;           /* Fondo naranja al hacer hover */
 }
 
 .client_section .custom_carousel-control .carousel-control-prev {
-  background-image: url(../images/prev.png);
+  background-image: url(../images/prev.png); /* Flecha izquierda como fondo */
 }
 
 .client_section .custom_carousel-control .carousel-control-next {
-  background-image: url(../images/next.png);
+  background-image: url(../images/next.png); /* Flecha derecha como fondo */
 }
 
-/* end client section */
-
-/* contact section */
-
+/* 
+============================================
+SECCIÓN DE CONTACTO
+============================================
+*/
 .contact_section {
-  background-image: url(../images/orange-dish.png);
-  background-repeat: no-repeat;
-  background-size: 215px;
-  background-position: right center;
+  background-image: url(../images/orange-dish.png); /* Imagen decorativa de fondo */
+  background-repeat: no-repeat;        /* No repetir imagen */
+  background-size: 215px;              /* Tamaño específico para la imagen */
+  background-position: right center;   /* Posiciona la imagen a la derecha, centrada verticalmente */
 }
 
 .contact_section input {
-  border: none;
-  outline: none;
-  border-bottom: .8px solid #252525;
-  width: 90%;
-  margin: 10px 0;
+  border: none;                        /* Sin borde predeterminado */
+  outline: none;                       /* Sin borde de enfoque */
+  border-bottom: .8px solid #252525;   /* Línea inferior sutil */
+  width: 90%;                          /* Ancho del 90% del contenedor */
+  margin: 10px 0;                      /* Margen vertical entre inputs */
 }
 
+/* 
+============================================
+CONTENEDOR DEL FORMULARIO DE CONTACTO
+============================================
+*/
 .contact_form-container {
-  padding: 15px 0 15px 0;
-
+  padding: 15px 0 15px 0;              /* Padding vertical */
 }
 
 .contact_form-container button {
-  border: none;
-  background-color: #fc5d35;
-  color: #fff;
-  padding: 8px 40px;
-  text-transform: uppercase;
-  font-size: 14px;
+  border: none;                        /* Sin borde */
+  background-color: #fc5d35;           /* Fondo naranja */
+  color: #fff;                         /* Texto blanco */
+  padding: 8px 40px;                   /* Padding interno */
+  text-transform: uppercase;           /* Texto en mayúsculas */
+  font-size: 14px;                     /* Tamaño de fuente pequeño */
 }
 
-
-/* contact section */
-
-/* map section */
+/* 
+============================================
+SECCIÓN DEL MAPA
+============================================
+*/
 .map_section {
-  height: 500px;
+  height: 500px;                       /* Altura fija para la sección del mapa */
 }
 
-
-/* end map section */
-
-/* info section */
+/* 
+============================================
+SECCIÓN DE INFORMACIÓN (REDES SOCIALES)
+============================================
+*/
 .info_section ul {
-  padding: 0;
+  padding: 0;                          /* Elimina padding predeterminado de listas */
 }
 
 .info_section ul li {
-  list-style-type: none;
-  margin: 3px 0;
-
+  list-style-type: none;               /* Elimina viñetas/bolitas de lista */
+  margin: 3px 0;                       /* Margen vertical pequeño entre elementos */
 }
 
 .info_section h5 {
-  margin-bottom: 12px;
-  font-size: 22px;
+  margin-bottom: 12px;                 /* Margen inferior para títulos */
+  font-size: 22px;                     /* Tamaño de fuente mediano-grande */
 }
 
+/* 
+============================================
+CAJA DE REDES SOCIALES
+============================================
+*/
 .info_section .social-box {
-  margin: 25px 0;
+  margin: 25px 0;                      /* Margen vertical para separar secciones */
 }
 
 .info_section .social-box img {
-  width: 35px;
-  margin-right: 5px;
+  width: 35px;                         /* Ancho fijo para iconos de redes */
+  margin-right: 5px;                   /* Espacio entre iconos */
 }
 
+/* 
+============================================
+FORMULARIO EN SECCIÓN DE INFORMACIÓN
+============================================
+*/
 .info_section .form_container input {
-  width: 225px;
-  height: 30px;
+  width: 225px;                        /* Ancho fijo para inputs */
+  height: 30px;                        /* Altura fija para inputs */
 }
 
 .info_section .form_container button {
-  background-color: #fc5d35;
-  border: none;
-  outline: none;
-  color: #fff;
-  padding: 5px 30px;
-  margin-top: 15px;
-  font-size: 15px;
+  background-color: #fc5d35;           /* Fondo naranja */
+  border: none;                        /* Sin borde */
+  outline: none;                       /* Sin borde de enfoque */
+  color: #fff;                         /* Texto blanco */
+  padding: 5px 30px;                   /* Padding interno */
+  margin-top: 15px;                    /* Margen superior para separar del input */
+  font-size: 15px;                     /* Tamaño de fuente estándar */
 }
 
-/* end info section */
-
-
-/* footer section*/
-
+/* 
+============================================
+SECCIÓN FOOTER (PIE DE PÁGINA)
+============================================
+*/
 .footer_section {
-  background-color: #252525;
-  padding: 20px 0;
-  font-family: "Roboto", sans-serif;
+  background-color: #252525;           /* Fondo gris muy oscuro/casi negro */
+  padding: 20px 0;                     /* Padding vertical */
+  font-family: "Roboto", sans-serif;   /* Fuente diferente para footer */
 }
 
 .footer_section p {
-  color: #ffffff;
-  margin: 0;
-  text-align: center;
+  color: #ffffff;                      /* Texto blanco */
+  margin: 0;                           /* Sin margen predeterminado */
+  text-align: center;                  /* Texto centrado */
 }
 
 .footer_section a {
-  color: #ffffff;
+  color: #ffffff;                      /* Enlaces blancos */
 }
 
-
-
-/* end footer section*/
-
+/* 
+============================================
+ESTILOS PARA EL MODAL DE WHATSAPP
+============================================
+*/
 .modal-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border-radius: 10px 10px 0 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Degradado morado */
+      color: white;                    /* Texto blanco */
+      border-radius: 10px 10px 0 0;    /* Bordes redondeados solo arriba */
     }
     
     .modal-content {
-      border-radius: 10px;
-      border: none;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      border-radius: 10px;              /* Bordes redondeados para todo el modal */
+      border: none;                     /* Sin borde predeterminado */
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2); /* Sombra pronunciada para efecto de elevación */
     }
     
     .modal-body {
-      padding: 30px;
+      padding: 30px;                    /* Padding interno amplio */
     }
     
+    /* 
+    ============================================
+    BOTÓN DE WHATSAPP
+    ============================================
+    */
     .whatsapp-btn {
-      background: #25D366;
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+      background: #25D366;              /* Verde característico de WhatsApp */
+      color: white;                     /* Texto blanco */
+      border: none;                     /* Sin borde */
+      padding: 12px 30px;               /* Padding interno */
+      border-radius: 50px;              /* Bordes completamente redondeados (cápsula) */
+      font-weight: 600;                 /* Texto seminegrita */
+      transition: all 0.3s ease;        /* Transición suave para todos los efectos */
+      display: flex;                    /* Flexbox para alinear icono y texto */
+      align-items: center;              /* Centra verticalmente */
+      justify-content: center;          /* Centra horizontalmente */
+      gap: 10px;                        /* Espacio entre icono y texto */
     }
     
     .whatsapp-btn:hover {
-      background: #128C7E;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+      background: #128C7E;              /* Verde más oscuro al hacer hover */
+      transform: translateY(-2px);      /* Efecto de levantar ligeramente */
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); /* Sombra verde sutil */
     }
     
+    /* 
+    ============================================
+    ESTILOS PARA CAMPOS DE FORMULARIO
+    ============================================
+    */
     .form-control:focus {
-      border-color: #667eea;
-      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+      border-color: #667eea;            /* Borde morado al enfocar */
+      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25); /* Sombra morada sutil */
     }
     
     textarea.form-control {
-      min-height: 120px;
-      resize: vertical;
+      min-height: 120px;                /* Altura mínima para textarea */
+      resize: vertical;                 /* Permite redimensionar solo verticalmente */
     }
     
     .whatsapp-icon {
-      width: 24px;
-      height: 24px;
+      width: 24px;                      /* Ancho fijo para icono */
+      height: 24px;                     /* Altura fija para icono */
     }
     
+    /* 
+    ============================================
+    BOTÓN DE DEMOSTRACIÓN (NO UTILIZADO EN HTML ACTUAL)
+    ============================================
+    */
     .demo-button {
-      background: #667eea;
-      color: white;
-      border: none;
-      padding: 15px 40px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 18px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin: 50px auto;
-      display: block;
+      background: #667eea;              /* Fondo morado */
+      color: white;                     /* Texto blanco */
+      border: none;                     /* Sin borde */
+      padding: 15px 40px;               /* Padding interno amplio */
+      border-radius: 50px;              /* Bordes completamente redondeados */
+      font-weight: 600;                 /* Texto seminegrita */
+      font-size: 18px;                  /* Tamaño de fuente grande */
+      cursor: pointer;                  /* Cursor de puntero */
+      transition: all 0.3s ease;        /* Transición suave */
+      margin: 50px auto;                /* Margen vertical y centrado horizontal */
+      display: block;                   /* Mostrar como bloque para centrar */
     }
     
     .demo-button:hover {
-      background: #764ba2;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+      background: #764ba2;              /* Morado más oscuro al hacer hover */
+      transform: translateY(-2px);      /* Efecto de levantar ligeramente */
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4); /* Sombra morada */
+    }
+
+    /* 
+    ============================================
+    ANIMACIONES SIMPLES PARA TORTAS COMPLETAS
+    Efectos de entrada para las secciones de pasteles
+    ============================================
+    */
+
+    /* Contenedor de cada torta - comienza invisible */
+    .torta-completa {
+        opacity: 0;                     /* Completamente transparente */
+        transition: all 0.8s ease-out;  /* Transición suave y lenta */
+    }
+
+    /* Tortas que aparecen desde la IZQUIERDA */
+    .torta-izquierda {
+        transform: translateX(-100px);  /* Comienza desplazada 100px a la izquierda */
+    }
+
+    /* Tortas que aparecen desde la DERECHA */
+    .torta-derecha {
+        transform: translateX(100px);   /* Comienza desplazada 100px a la derecha */
+    }
+
+    /* Cuando la torta es visible (clase añadida con JavaScript) */
+    .torta-completa.visible {
+        opacity: 1;                     /* Completamente visible */
+        transform: translateX(0);       /* Vuelve a posición normal */
+    }
+
+    /* 
+    ============================================
+    BOTÓN FLOTANTE PARA SUBIR AL INICIO
+    ============================================
+    */
+    #scroll-to-top {
+        position: fixed;                /* Fijo en la pantalla */
+        bottom: 30px;                   /* 30px desde el fondo */
+        right: 30px;                    /* 30px desde la derecha */
+        width: 50px;                    /* Ancho cuadrado */
+        height: 50px;                   /* Altura cuadrado */
+        background-color: #fc5d35;      /* Color naranja consistente con el tema */
+        color: white;                   /* Texto blanco */
+        border: none;                   /* Sin borde */
+        cursor: pointer;                /* Cursor de puntero */
+        display: none;                  /* Oculto por defecto */
+        align-items: center;            /* Centra contenido verticalmente (Flexbox) */
+        justify-content: center;        /* Centra contenido horizontalmente (Flexbox) */
+        font-size: 24px;                /* Tamaño de fuente grande para flecha */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para efecto de elevación */
+        transition: all 0.3s ease;      /* Transición suave para todos los efectos */
+        z-index: 9999;                  /* Alto z-index para estar sobre todo */
+        opacity: 0;                     /* Inicialmente transparente */
+        transform: translateY(20px);    /* Inicialmente desplazado hacia abajo */
+    }
+
+    /* Estado visible del botón (clase añadida con JavaScript) */
+    #scroll-to-top.show {
+        display: flex;                  /* Muestra el botón usando Flexbox */
+        opacity: 1;                     /* Completamente visible */
+        transform: translateY(0);       /* Vuelve a posición normal */
+    }
+
+    /* Efecto hover para el botón */
+    #scroll-to-top:hover {
+        background-color: #e69c00;      /* Color más oscuro al pasar el mouse */
+        transform: scale(1.1);          /* Aumenta tamaño al 110% */
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    }
+
+    /* Efecto al hacer clic (active) */
+    #scroll-to-top:active {
+        transform: scale(0.95);         /* Reduce ligeramente el tamaño */
+    }
+
+    /* Flecha del botón */
+    #scroll-to-top i {
+        transition: transform 0.3s ease; /* Transición suave para la flecha */
+    }
+
+    /* Efecto hover para la flecha */
+    #scroll-to-top:hover i {
+        transform: translateY(-3px);    /* Mueve la flecha ligeramente hacia arriba */
+    }
+
+    /* 
+    ============================================
+    MEDIA QUERIES PARA DISPOSITIVOS MÓVILES
+    ============================================
+    */
+    @media (max-width: 768px) {
+        /* Botón flotante más pequeño en móviles */
+        #scroll-to-top {
+            bottom: 20px;               /* Más cerca del borde */
+            right: 20px;                /* Más cerca del borde */
+            width: 45px;                /* Un poco más pequeño */
+            height: 45px;               /* Un poco más pequeño */
+            font-size: 20px;            /* Flecha un poco más pequeña */
+        }
     }

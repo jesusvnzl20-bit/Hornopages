@@ -1,0 +1,278 @@
+@media (max-width: 1120px) {
+    .hero_area {
+        height: auto;
+    }
+
+    .slider_section {
+        padding: 50px 0;
+
+    }
+}
+
+/* Estilos para hacer el mapa completamente responsive */
+.map_section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    background: #f8f9fad8;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+#map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important; /* Sobreescribe el ancho fijo */
+    height: 100% !important; /* Sobreescribe la altura fija */
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Elimina el center tag que no es necesario con CSS moderno */
+#map center {
+    display: contents; /* Hace que el center no afecte el layout */
+}
+
+/* Media Queries para responsividad */
+
+/* Para tablets y laptops pequeñas */
+@media (max-width: 1024px) {
+    .map_section {
+        padding: 15px;
+    }
+    
+    #map {
+        min-height: 400px;
+    }
+}
+
+/* Para tablets en orientación vertical */
+@media (max-width: 768px) {
+    .map_section {
+        padding: 12px;
+        border-radius: 8px;
+    }
+    
+    #map {
+        min-height: 350px;
+    }
+}
+
+/* Para móviles grandes */
+@media (max-width: 576px) {
+    .map_section {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 6px;
+    }
+    
+    #map {
+        min-height: 300px;
+    }
+    
+    #map iframe {
+        border-radius: 6px;
+    }
+}
+
+/* Para móviles pequeños */
+@media (max-width: 375px) {
+    #map {
+        min-height: 250px;
+    }
+}
+
+/* Para pantallas muy grandes */
+@media (min-width: 1600px) {
+    .map_section {
+        max-width: 1400px;
+    }
+    
+    #map {
+        min-height: 500px;
+    }
+}
+
+/* Efecto hover para mejorar la experiencia */
+#map iframe:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Asegurar que el contenedor mantenga relación de aspecto 16:9 */
+.aspect-ratio-16-9 {
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    width: 100%;
+}
+
+.aspect-ratio-16-9 iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+/* Opcional: Para mantener el mapa centrado horizontalmente */
+.map_section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+@media (min-width: 768px) {
+    /* Para tablets - dos columnas con espacio */
+    #video {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+    
+    #video video {
+        flex: 0 1 calc(50% - 40px); /* Dos videos por fila con espacio */
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Para escritorio grande - más espacio y tamaño */
+    #video {
+        gap: 60px;
+        padding: 60px 40px;
+    }
+    
+    #video video {
+        flex: 0 1 calc(33.333% - 60px); /* Tres videos por fila en pantallas grandes */
+        max-width: 350px;
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+    #video {
+        gap: 30px;
+        padding: 30px 15px;
+    }
+    
+    #video video {
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+@media (max-width: 992px) {
+    .custom_nav-container .nav_search-btn {
+        background-position: center;
+    }
+
+    .service_section .card-deck {
+
+        flex-direction: column;
+
+    }
+
+    .service_section .card-deck .card {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .slider_img-box {
+
+        width: 85%;
+        margin: 65px auto;
+
+    }
+
+    .slider_section .custom_carousel-control {
+
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 105px;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .fruit_section .fruit_detail-box {
+
+        margin-bottom: 40px;
+        text-align: center;
+
+    }
+
+    .fruit_detail-box>div {
+
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .contact_section {
+        background-size: 105px;
+    }
+
+    .contact_section input {
+
+        background-color: transparent;
+
+    }
+
+    .info_section .col-md-3 {
+        text-align: center;
+    }
+
+    .info_section .col-md-3:not(:nth-last-child(1)) {
+
+        margin-bottom: 35px;
+    }
+
+    .tasty_section h2 {
+
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .slider_item-container .slider_item-detail {
+
+        text-align: center;
+
+    }
+
+    .slider_item-container .slider_item-detail .d-flex {
+
+        justify-content: center;
+
+    }
+}
+
+@media (max-width: 480px) {}
+
+@media (max-width: 400px) {}
+
+@media (max-width: 360px) {}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+
+}
